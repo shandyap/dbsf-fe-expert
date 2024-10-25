@@ -1,0 +1,89 @@
+@media screen and (max-width: 499px) {
+    .nav {
+        z-index: 10;
+        top: 1.5rem;;
+        background-color: #fff;
+        width: 250px;
+        position: absolute;
+        flex-direction: column;
+        margin-left: -50px;
+        margin-top: 65px;
+        /* This trasform moves the drawer off canvas. */
+        -webkit-transform: translate(-350px, 0);
+        transform: translate(-350px, 0);
+        
+        /* Optionally, we animate the drawer. */
+        transition: transform 0.3s ease;
+    }
+
+    .open {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+        
+    }
+
+    .nav-item {
+        padding: 1em;
+        text-align: center;
+        border-bottom: 1px solid #ff6b6b;
+        
+    } 
+
+    .nav-item a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-block;
+    }
+
+}
+
+@media screen and (min-width: 500px) {
+    .header-menu {
+        display: none;
+    }
+
+    .resto-item-content {
+        padding: 16px 32px 32px 32px; 
+    }
+
+    .resto-item-title {
+        font-size: 18px;
+    }
+
+    .resto-item-description {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .resto {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 16px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .nav {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .resto {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    main {
+        max-width: 1200px;
+    }
+    .hero {
+        width: 1000px;
+        margin: 0 auto;
+    }
+}
