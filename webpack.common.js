@@ -1,7 +1,9 @@
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -17,20 +19,14 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-          },
+          'style-loader',
+          'css-loader',
         ],
       },
-      
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -42,6 +38,9 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: 'sw.bundle.js',
     }),
   ],
 };
