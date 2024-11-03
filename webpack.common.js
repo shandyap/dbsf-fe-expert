@@ -46,13 +46,13 @@ module.exports = {
       skipWaiting: true,
       runtimeCaching: [
         {
-          urlPattern: /^https:\/\/restaurant-api\.dicoding\.dev\/list/,
+          urlPattern: /^https:\/\/restaurant-api\.dicoding\.dev/,
           handler: 'NetworkFirst',
           options: {
             cacheName: 'restaurant-api-cache',
             expiration: {
               maxEntries: 50,
-              maxAgeSeconds: 24 * 60 * 60, // Cache 1 hari
+              maxAgeSeconds: 24 * 60 * 60,
             },
           },
         },
@@ -64,7 +64,7 @@ module.exports = {
             cacheName: 'restaurant-images-cache',
             expiration: {
               maxEntries: 60,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // Cache 30 hari
+              maxAgeSeconds: 30 * 24 * 60 * 60,
             },
           },
         },
@@ -75,7 +75,18 @@ module.exports = {
             cacheName: 'local-image-cache',
             expiration: {
               maxEntries: 60,
-              maxAgeSeconds: 30 * 24 * 60 * 60, // Cache 30 hari
+              maxAgeSeconds: 30 * 24 * 60 * 60,
+            },
+          },
+        },
+        {
+          urlPattern: /detail\.js$/,
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'detail-js-cache',
+            expiration: {
+              maxEntries: 10,
+              maxAgeSeconds: 24 * 60 * 60, // Cache 1 hari
             },
           },
         },

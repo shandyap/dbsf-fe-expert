@@ -21,6 +21,13 @@ window.addEventListener('load', () => {
   swRegister();
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const skipLinkElem = document.querySelector('.skip-link');
+  skipLinkElem.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.querySelector('#maincontent').focus();
+  });
+});
 
 // // Dynamically populate restaurant list
 // const restoList = document.getElementById('restoList');

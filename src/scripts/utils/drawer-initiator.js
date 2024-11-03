@@ -1,6 +1,7 @@
 const DrawerInitiator = {
   init({ menu, drawer }) {
     menu.addEventListener('click', (event) => {
+      event.preventDefault();
       this._toggleDrawer(event, drawer);
     });
 
