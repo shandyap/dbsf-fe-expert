@@ -1,4 +1,4 @@
-@media screen and (max-width: 499px) {
+@media screen and (max-width: 545px) {
     .nav {
         z-index: 10;
         top: 1.5rem;;
@@ -37,7 +37,7 @@
 
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 545px) {
     .header-menu {
         display: none;
     }

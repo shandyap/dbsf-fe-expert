@@ -55,6 +55,11 @@ body {
   align-items: center;
   flex-grow: 4;
 }
+
+.app-logo img {
+  width: 60px;
+  height: 60px;
+}
 .nav-item a {
   text-decoration: none;
   color: white;
@@ -147,7 +152,7 @@ main {
   background-color: #fff;
 }
 
-.explore-resto-label {
+.explore-resto-label, .content__heading {
   font-size: 2rem;
   font-weight: bold;
   text-align: center;
@@ -226,6 +231,11 @@ main {
 }
 
 /* Detail Resto */
+
+.detail-resto {
+  padding: 32px;
+  background-color: #fff;
+}
 .detail-resto-title {
   font-size: 2.5rem;
   font-weight: bold;
@@ -417,6 +427,29 @@ main {
   color: #555;
   margin-top: 0.5rem;
   line-height: 1.4;
+}
+
+ 
+/*
+  Like
+*/
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #db0000;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
 }
 
 /* Footer */

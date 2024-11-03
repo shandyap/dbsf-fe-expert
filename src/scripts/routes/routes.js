@@ -6,6 +6,7 @@ const routes = {
   '/': Home,
   '/home': Home,
   '/detail/:id': Detail,
+  '/favorite': Favorite,
 };
 
 export default routes;
