@@ -89,6 +89,9 @@ body {
   font-size: 2rem;
   cursor: pointer;
   text-decoration: none;
+  min-height: 44px;
+  min-width: 44px;
+  display: inline-block;
   
 }
 
@@ -370,8 +373,13 @@ main {
   transition: background-color 0.3s;
   min-height: 44px;
   min-height: 44px;
+  box-shadow: 0 5px 0 #D35400 ;
 }
 
+.submit-btn:active {
+  box-shadow: 0 2.5px 0 #D35400 ;
+  transform: translateY(5px);
+}
 
 .submit-btn:hover {
   background-color: #e07a2f;
