@@ -1,5 +1,6 @@
 import FavoriteRestoIdb from '../../data/favorite-resto';
 import { createRestoItemTemplate } from '../templates/template-creator';
+
 const Favorite = {
   async render() {
     return `
@@ -14,17 +15,16 @@ const Favorite = {
   async afterRender() {
     const restos = await FavoriteRestoIdb.getAllResto();
     const restosContainer = document.querySelector('#restos');
-    const empty = document.querySelector('.favorite-empty');
 
-    if (restos.length === 0) {
-      empty.innerHTML += `
+    if (restos.length) {
+      restos.forEach((resto) => {
+        restosContainer.innerHTML += createRestoItemTemplate(resto);
+      });
+    } else {
+      restosContainer.innerHTML += `
       <h3 class="favorite-empty">Kamu Belum Menambahkan Daftar Favorite😓</h3>
       `;
     }
-
-    restos.forEach((resto) => {
-      restosContainer.innerHTML += createRestoItemTemplate(resto);
-    });
   }
 };
 
